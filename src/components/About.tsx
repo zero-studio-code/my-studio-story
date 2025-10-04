@@ -7,10 +7,10 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            О <span className="bg-gradient-primary bg-clip-text text-transparent">студии</span>
+            О <span className="bg-gradient-primary bg-clip-text text-transparent">разработчике</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Zero Code Studio - это место, где идеи превращаются в реальность
+            Zero Code Studio - мой личный проект для разработки и экспериментов
           </p>
         </div>
 
@@ -21,8 +21,8 @@ const About = () => {
             </div>
             <h3 className="text-2xl font-bold mb-4">Кто я</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Профессиональный разработчик с 5+ годами опыта в создании современных веб-решений. 
-              Специализируюсь на full-stack разработке и no-code платформах.
+              Разработчик с опытом в создании современных веб-приложений. 
+              Работаю с full-stack разработкой и no-code платформами.
             </p>
           </Card>
 
@@ -30,10 +30,10 @@ const About = () => {
             <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:animate-glow">
               <Target className="w-8 h-8 text-accent" />
             </div>
-            <h3 className="text-2xl font-bold mb-4">Моя миссия</h3>
+            <h3 className="text-2xl font-bold mb-4">Что меня интересует</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Делать сложные технологии доступными для всех. Создаю решения, которые работают 
-              эффективно и выглядят превосходно.
+              Изучение новых технологий и создание интересных проектов. 
+              Эксперименты с современными инструментами разработки.
             </p>
           </Card>
 
@@ -43,8 +43,8 @@ const About = () => {
             </div>
             <h3 className="text-2xl font-bold mb-4">Мой подход</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Быстрая разработка без ущерба качеству. Использую современные инструменты 
-              и лучшие практики для достижения результата.
+              Фокус на качестве и эффективности разработки. 
+              Использую современные инструменты и актуальные практики.
             </p>
           </Card>
         </div>

@@ -1,36 +1,36 @@
 import { Card } from "@/components/ui/card";
 import { Globe, Smartphone, Palette, Database, Code, Rocket } from "lucide-react";
 
-const services = [
+const skills = [
   {
     icon: Globe,
     title: "Веб-разработка",
-    description: "Современные веб-приложения и сайты с адаптивным дизайном и высокой производительностью",
+    description: "Разработка современных веб-приложений с использованием React, TypeScript и других технологий",
   },
   {
     icon: Smartphone,
-    title: "Мобильные приложения",
-    description: "PWA и мобильные web-приложения, которые работают как нативные",
+    title: "PWA приложения",
+    description: "Создание прогрессивных веб-приложений, которые работают как нативные",
   },
   {
     icon: Palette,
-    title: "UI/UX дизайн",
-    description: "Продуманный пользовательский интерфейс и опыт взаимодействия",
+    title: "UI/UX",
+    description: "Проектирование интерфейсов с акцентом на пользовательский опыт",
   },
   {
     icon: Database,
-    title: "Backend разработка",
-    description: "Надежные серверные решения, API и интеграции с базами данных",
+    title: "Backend",
+    description: "Работа с серверной частью, API и базами данных",
   },
   {
     icon: Code,
-    title: "No-code решения",
-    description: "Быстрая разработка на платформах Lovable, Bubble, Webflow",
+    title: "No-code платформы",
+    description: "Опыт работы с Lovable, Bubble, Webflow для быстрого прототипирования",
   },
   {
     icon: Rocket,
     title: "Оптимизация",
-    description: "Улучшение производительности и SEO существующих проектов",
+    description: "Улучшение производительности и SEO веб-приложений",
   },
 ];
 
@@ -40,25 +40,25 @@ const Services = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Чем я <span className="bg-gradient-primary bg-clip-text text-transparent">занимаюсь</span>
+            Мои <span className="bg-gradient-primary bg-clip-text text-transparent">навыки</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Полный спектр услуг для создания вашего цифрового продукта
+            Технологии и инструменты, с которыми я работаю
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {services.map((service, index) => (
+          {skills.map((skill, index) => (
             <Card 
               key={index}
-              className="p-6 bg-card border-border hover:border-primary transition-all hover:shadow-card group cursor-pointer"
+              className="p-6 bg-card border-border hover:border-primary transition-all hover:shadow-card group"
             >
               <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center mb-4 group-hover:animate-glow">
-                <service.icon className="w-7 h-7 text-white" />
+                <skill.icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <h3 className="text-xl font-bold mb-3">{skill.title}</h3>
               <p className="text-muted-foreground leading-relaxed">
-                {service.description}
+                {skill.description}
               </p>
             </Card>
           ))}

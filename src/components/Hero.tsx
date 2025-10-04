@@ -35,16 +35,16 @@ const Hero = () => {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
-          Создаем цифровые
+          Разработка
           <br />
           <span className="bg-gradient-primary bg-clip-text text-transparent">
-            продукты будущего
+            веб-приложений
           </span>
         </h1>
 
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          Профессиональная разработка веб-приложений и сайтов. 
-          Быстро, качественно, с современными технологиями.
+          Персональная страница разработчика. 
+          Эксперименты с современными веб-технологиями.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
@@ -53,15 +53,15 @@ const Hero = () => {
             className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-glow group"
             onClick={() => scrollToSection("portfolio")}
           >
-            Смотреть портфолио
+            Мои проекты
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button 
             size="lg" 
             variant="secondary"
-            onClick={() => scrollToSection("contact")}
+            onClick={() => scrollToSection("about")}
           >
-            Связаться со мной
+            Узнать больше
           </Button>
         </div>
 

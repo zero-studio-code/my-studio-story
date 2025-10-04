@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code2 } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -30,21 +33,20 @@ const Hero = () => {
         <div className="flex items-center justify-center mb-6 animate-fade-in">
           <Code2 className="w-12 h-12 text-primary mr-3" />
           <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            Zero Code Studio
+            {t.hero.studio}
           </span>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
-          Разработка
+          {t.hero.title1}
           <br />
           <span className="bg-gradient-primary bg-clip-text text-transparent">
-            веб-приложений
+            {t.hero.title2}
           </span>
         </h1>
 
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          Персональная страница разработчика. 
-          Эксперименты с современными веб-технологиями.
+          {t.hero.description}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
@@ -53,7 +55,7 @@ const Hero = () => {
             className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-glow group"
             onClick={() => scrollToSection("portfolio")}
           >
-            Мои проекты
+            {t.hero.cta1}
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button 
@@ -61,7 +63,7 @@ const Hero = () => {
             variant="secondary"
             onClick={() => scrollToSection("about")}
           >
-            Узнать больше
+            {t.hero.cta2}
           </Button>
         </div>
 
@@ -69,15 +71,15 @@ const Hero = () => {
         <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mt-16 animate-fade-in" style={{ animationDelay: "0.6s" }}>
           <div>
             <div className="text-4xl font-bold text-primary mb-2">5+</div>
-            <div className="text-muted-foreground">Лет опыта</div>
+            <div className="text-muted-foreground">{t.hero.stats.experience}</div>
           </div>
           <div>
             <div className="text-4xl font-bold text-primary mb-2">50+</div>
-            <div className="text-muted-foreground">Проектов</div>
+            <div className="text-muted-foreground">{t.hero.stats.projects}</div>
           </div>
           <div>
             <div className="text-4xl font-bold text-primary mb-2">100%</div>
-            <div className="text-muted-foreground">Качество</div>
+            <div className="text-muted-foreground">{t.hero.stats.quality}</div>
           </div>
         </div>
       </div>

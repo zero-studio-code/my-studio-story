@@ -1,49 +1,52 @@
 import { Card } from "@/components/ui/card";
 import { Globe, Smartphone, Palette, Database, Code, Rocket } from "lucide-react";
-
-const skills = [
-  {
-    icon: Globe,
-    title: "Веб-разработка",
-    description: "Разработка современных веб-приложений с использованием React, TypeScript и других технологий",
-  },
-  {
-    icon: Smartphone,
-    title: "PWA приложения",
-    description: "Создание прогрессивных веб-приложений, которые работают как нативные",
-  },
-  {
-    icon: Palette,
-    title: "UI/UX",
-    description: "Проектирование интерфейсов с акцентом на пользовательский опыт",
-  },
-  {
-    icon: Database,
-    title: "Backend",
-    description: "Работа с серверной частью, API и базами данных",
-  },
-  {
-    icon: Code,
-    title: "No-code платформы",
-    description: "Опыт работы с Lovable, Bubble, Webflow для быстрого прототипирования",
-  },
-  {
-    icon: Rocket,
-    title: "Оптимизация",
-    description: "Улучшение производительности и SEO веб-приложений",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
+  const skills = [
+    {
+      icon: Globe,
+      title: t.skills.items.web.title,
+      description: t.skills.items.web.description,
+    },
+    {
+      icon: Smartphone,
+      title: t.skills.items.pwa.title,
+      description: t.skills.items.pwa.description,
+    },
+    {
+      icon: Palette,
+      title: t.skills.items.uiux.title,
+      description: t.skills.items.uiux.description,
+    },
+    {
+      icon: Database,
+      title: t.skills.items.backend.title,
+      description: t.skills.items.backend.description,
+    },
+    {
+      icon: Code,
+      title: t.skills.items.nocode.title,
+      description: t.skills.items.nocode.description,
+    },
+    {
+      icon: Rocket,
+      title: t.skills.items.optimization.title,
+      description: t.skills.items.optimization.description,
+    },
+  ];
+  
   return (
     <section id="services" className="py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Мои <span className="bg-gradient-primary bg-clip-text text-transparent">навыки</span>
+            {t.skills.title} <span className="bg-gradient-primary bg-clip-text text-transparent">{t.skills.titleHighlight}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Технологии и инструменты, с которыми я работаю
+            {t.skills.description}
           </p>
         </div>
 

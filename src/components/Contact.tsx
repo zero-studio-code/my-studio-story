@@ -1,17 +1,49 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageSquare, Github, Linkedin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t, language } = useLanguage();
+  
+  const content = {
+    ru: {
+      startProject: 'Начните свой проект',
+      projectDesc: 'Расскажите о своей идее, и я помогу воплотить её в жизнь. Отвечу на все вопросы и предложу оптимальное решение.',
+      socials: 'Социальные сети',
+      socialsDesc: 'Следите за моими проектами и новостями в социальных сетях',
+      tip: 'Подсказка:',
+      tipText: 'Обычно отвечаю в течение 24 часов. Для срочных вопросов пишите в Telegram.'
+    },
+    en: {
+      startProject: 'Start Your Project',
+      projectDesc: 'Tell me about your idea, and I will help bring it to life. I will answer all questions and suggest the best solution.',
+      socials: 'Social Media',
+      socialsDesc: 'Follow my projects and news on social media',
+      tip: 'Tip:',
+      tipText: 'I usually respond within 24 hours. For urgent questions, write to Telegram.'
+    },
+    de: {
+      startProject: 'Starten Sie Ihr Projekt',
+      projectDesc: 'Erzählen Sie mir von Ihrer Idee, und ich werde helfen, sie zum Leben zu erwecken. Ich werde alle Fragen beantworten und die beste Lösung vorschlagen.',
+      socials: 'Soziale Medien',
+      socialsDesc: 'Folgen Sie meinen Projekten und Neuigkeiten in sozialen Medien',
+      tip: 'Tipp:',
+      tipText: 'Ich antworte normalerweise innerhalb von 24 Stunden. Für dringende Fragen schreiben Sie an Telegram.'
+    }
+  };
+  
+  const currentContent = content[language];
+  
   return (
     <section id="contact" className="py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Свяжитесь <span className="bg-gradient-primary bg-clip-text text-transparent">со мной</span>
+            {t.contact.title} <span className="bg-gradient-primary bg-clip-text text-transparent">{t.contact.titleHighlight}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Готов обсудить ваш проект и предложить лучшее решение
+            {t.contact.description}
           </p>
         </div>
 
@@ -19,10 +51,9 @@ const Contact = () => {
           <Card className="p-8 md:p-12 bg-card border-border">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-bold mb-6">Начните свой проект</h3>
+                <h3 className="text-2xl font-bold mb-6">{currentContent.startProject}</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
-                  Расскажите о своей идее, и я помогу воплотить её в жизнь. 
-                  Отвечу на все вопросы и предложу оптимальное решение.
+                  {currentContent.projectDesc}
                 </p>
 
                 <div className="space-y-4">
@@ -51,9 +82,9 @@ const Contact = () => {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-6">Социальные сети</h3>
+                <h3 className="text-2xl font-bold mb-6">{currentContent.socials}</h3>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
-                  Следите за моими проектами и новостями в социальных сетях
+                  {currentContent.socialsDesc}
                 </p>
 
                 <div className="flex flex-wrap gap-4">
@@ -84,8 +115,7 @@ const Contact = () => {
 
                 <div className="mt-8 p-6 bg-secondary/50 rounded-xl">
                   <p className="text-sm text-muted-foreground">
-                    💡 <strong>Подсказка:</strong> Обычно отвечаю в течение 24 часов. 
-                    Для срочных вопросов пишите в Telegram.
+                    💡 <strong>{currentContent.tip}</strong> {currentContent.tipText}
                   </p>
                 </div>
               </div>
